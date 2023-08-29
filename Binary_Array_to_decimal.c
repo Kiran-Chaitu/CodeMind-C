@@ -1,19 +1,17 @@
-#include<stdio.h>
-#include<math.h>
+#include<bits/stdc++.h>
+using namespace std;
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    int a[n],i,sum=0,j=0,rm;
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
+    int n,i,t,s=0;
+    cin>>n;
+    vector <int> v;
+    for(i=0;i<n;i++){
+        cin>>t;
+        v.push_back(t);
     }
-    for(i=(n-1);i>=0;i--)
-    {
-        rm=a[i]*pow(2,j);
-        sum+=rm;
-        j++;
+    for(i=0;i<n;i++){
+        if(v[i]==1){
+        s+=pow(2,(n-i-1)*v[i]);}
     }
-    printf("%d",sum);
+    cout<<s;
 }
